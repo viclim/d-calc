@@ -1,0 +1,19 @@
+.d-calc {
+  .d-input {
+    display: block;
+
+    &__label {
+      display: inline-block;
+      width: 50%;
+    }
+
+    .d-field {
+      display: inline-block;
+      width: 50%;
+    }
+  }
+
+  .d-sheet {
+    display: block;
+  }
+}
