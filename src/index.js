@@ -1,7 +1,7 @@
 require('./app.scss');
 
 import assign from 'object-assign';
-import { each, reduce } from 'lodash';
+import { each, isNaN, reduce } from 'lodash';
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
