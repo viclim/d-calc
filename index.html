@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <style>
+     body {
+       font-family: arial, san-serif;
+     }
+     .sheet-container {
+       border: 1px solid #999;
+       padding: 10px;
+     }
+    </style>
+  </head>
+  <body>
+    <div class="d-calc">
+      <div id="property-price"></div>
+      <div id="down-payment"></div>
+      <div id="length-of-mortgage"></div>
+      <div id="interest-rate"></div>
+      <div class="sheet-container">
+        Instalment per month:
+        <div id="sheet"></div>
+      </div>
+    </div>
+    <script src="/dist/bundle.js"></script>
+    <script type="text/javascript">
+     RenderCalculator({
+       propertyPrice: {
+         defaultValue: 100,
+         prefix: '$'
+       },
+       downPayment: {
+         prefix: '$'
+       },
+       lengthOfMortgage: {
+         suffix: 'year(s)'
+       }
+     }, {
+       elementId: 'sheet',
+       formula: function(inputs) {
+         return (
+           inputs.propertyPrice - inputs.downPayment
+         ) / inputs.lengthOfMortgage / 12;
+       }
+     });
+    </script>
+  </body>
+</html>
